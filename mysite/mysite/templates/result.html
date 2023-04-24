@@ -1,0 +1,32 @@
+<!--This html template is based on a template on FreeCodeCamp. Link: https://codepen.io/freeCodeCamp/pen/VPaoNP.-->
+{% load static %}
+<div class="container">
+  <header class="header">
+    <h1 id="title" class="text-center">Prediction Result:</h1>
+
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <p id="description" class="description text-center">
+      This is the prediction result based on your answers, run by the machine learning model
+    </p>
+  </header>
+
+
+    <h2>You probably {{result}} COVID</h2>
+    <h3>Recommendation for you: </h3>
+    {% if result == "have" %}
+    <ul>
+      <li>Get a home test or contact your healthcare provider</li>
+      <li>Self-isolate</li>
+        <li>Get rest, stay hydrated, and take over-the-counter medications to alleviate symptoms.</li>
+        <li>Inform close contacts</li>
+    </ul>
+     {% else%}
+    <ul>
+      <li>Get some rest and observe your symtoms. If you still feel uncomfortable, go to the hospitals nearby .</li>
+    </ul>
+    {% endif %}
+
+
+
+
+</div>

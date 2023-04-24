@@ -1,0 +1,47 @@
+<!--This html template is based on a template on FreeCodeCamp. Link: https://codepen.io/freeCodeCamp/pen/VPaoNP.-->
+{% load static %}
+<div class="container">
+  <header class="header">
+    <h1 id="title" class="text-center">Covid Diagnosis Form </h1>
+
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <p id="description" class="description text-center">
+      Please answer these questions accurately. Then our model can give you a more precise result.
+    </p>
+  </header>
+  {% url 'submit_form' as the_url %}
+
+  <form id="survey-form" method="POST" action ="{% url 'submit_form' %}" >
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-group">
+      <p>{{field.question}}</p>
+      <label>
+        <input
+          name= "{{field.name}}"
+          value="1"
+          type="radio"
+          class="input-radio"
+          checked
+        />Yes</label
+      >
+      <label>
+        <input
+          name= "{{field.name}}"
+          value="0"
+          type="radio"
+          class="input-radio"
+        />No</label
+      >
+    </div>
+    {% endfor %}
+
+    <div class="form-group">
+      <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button>
+    </div>
+
+  </form>
+
+</div>
