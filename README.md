@@ -49,10 +49,13 @@ access the website by this url: http://127.0.0.1:8000/
 
 
 ## Results (Screenshots)
-This is the main page:
-
-
-
+This is the main page: \
+It contains many questions and a submit button
+![img.png](demo/Screenshot1.png)
+This is a example of prediction result:
+![img.png](demo/Screenshot2.png)
+Video demo:  
+[Duck Duck Go](demo/video_demo.mp4)
 
 ## Explain the decision
 
